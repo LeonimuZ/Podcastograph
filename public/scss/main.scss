@@ -1,0 +1,232 @@
+@charset "UTF-8";
+@import "compass";
+@import "normalize";
+@import "base";
+
+body, html { min-height: 100%; }
+
+body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.4;
+    color: $black;
+    text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+    &:hover {
+        color: $gray;
+    }
+}
+
+#masthead {
+    @extend .container_12;
+    margin: 0 auto;
+    height:81px;
+    width: 100%;
+    @include background(linear-gradient(bottom, #45484d 0%, $black 100%)); 
+    box-shadow: inset 0 -1px 6px $black;
+    border-bottom: 1px solid $white;
+    @include holder;
+    .logo {
+        @extend .grid_2, .alpha;
+        img { display: block; }
+    }
+    .menu {
+        @extend .grid_10, .omega;
+        ul {
+            float: right;
+            padding:0;
+            li { 
+                display: inline-block;
+                &:hover {
+                    background-color: $black;
+                }
+            }
+            a {
+                display: block;
+                padding: 29px 20px;
+            }
+        }
+    }
+}
+
+#wrapper {
+    display: block; 
+    position: relative;
+    width: 100%;
+    background: $white url(../images/diamond.png) repeat fixed center;
+}
+
+#content {
+    @extend .container_12;
+    @include clearfix;
+}
+
+#show_masthead {
+    .logo{
+        @extend .grid_12;
+        padding: 20px 0 5px;
+        img {
+            display: block;
+        }
+    }
+    .heading {
+        @extend .grid_4;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        @include box_style;
+        font-size: 1.125em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .about, .subscribe {
+        margin-bottom: 20px;
+        padding: 10px;
+        height: 100px;
+        @include box_style;
+    }
+    .about {
+        @extend .grid_6;
+        font-size: 0.750em;
+    }
+    .subscribe {
+        @extend .grid_6;
+        ul {
+            text-align: center;
+            li {
+                display: inline-block;
+                margin-left: -4px;
+                padding: 0px 20px;
+                a {
+                    display: block;
+                    color: $black;
+                    &:hover { color: $gray; }
+                    i::before {
+                        display: block;
+                        margin-right: 0;
+                        width:auto;
+                        font-size: 2.500em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.post {
+    position: relative;
+    overflow: hidden;
+    @extend .grid_4;
+    margin-bottom: 20px;
+    height:300px;
+    color: $white;
+    @include box_style;
+    &:hover {
+        box-shadow: 0 0 3px $gray;
+    }
+    .image {
+        display: block;
+        max-height: 300px;
+        width: 100%;
+    }
+    .content {
+        position: absolute;
+        top:0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        padding-bottom: 0;
+        background-color: rgba(17, 17, 17, 0.5);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+        .number {
+            display: block;
+            float: right;
+            margin-left: 5px;
+            margin-bottom: 15px;
+            font-size: 2.375em;
+            line-height: 32px;
+            font-weight: bold;
+        }
+        .meta {
+            min-height: 38px;
+        }
+        .title {
+            font-size: 1.125em;
+            line-height: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .time {
+            font-size: 14px;
+        }
+        .description {
+            display:inline-block;
+            margin: 10px 0 5px;
+            font-size: 0.875em;
+            line-height: 1.1;
+        }
+        .actions {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            background-color: rgba(17, 17, 17, 0.5);
+            li {
+                display: inline-block;
+                font-size: 0.875em;
+                text-transform: uppercase;
+                font-weight: bold;
+                &:hover {
+                    background-color: $black;
+                    color: $white;
+                }
+                a {
+                    display: block;
+                    padding: 8px 5px;
+                }
+            }
+        }
+    }
+}
+
+#footer {
+
+}
+
+#main_player {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    width: 50%;
+    z-index: 100;
+}
+
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
+
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (max-width: 767px) {
+    #page, #sidebar {
+        float: none;
+        margin:0;
+    }
+
+    #sidebar {
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 1140px) {
+
+}
