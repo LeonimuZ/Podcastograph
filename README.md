@@ -1,4 +1,4 @@
-Podcastograph 0.1
+Podcastograph Theme 1.0
 =======
 
-Original assets for Podcastograph Theme. Used for Subversioning.
+A theme for media publishers. Feel free to adapt to your preferred CMS.
